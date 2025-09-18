@@ -1,0 +1,19 @@
+.reveal h1, .reveal h2, .reveal p {
+  font-family: 'Black Arial', sans-serif;
+  text-align: center;
+}
+
+.reveal section {
+  background: #fffaf0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: gold;
+  cursor: pointer;
+}
