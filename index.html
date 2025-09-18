@@ -9,12 +9,34 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css" id="theme">
 
   <link rel="stylesheet" href="style.css">
+    <style>
+    #rotate-message {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000dd;
+      color: white;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+  </style>
 </head>
 <body>
   <audio id="bg-music" src="Cancion.mp3" loop></audio>
   <button id="play-btn" style="position:fixed;top:20px;right:20px;z-index:999;font-size:1.2em;">
     ▶️ Música
   </button>
+  <div id="rotate-message">
+  📱 Por favor gira tu celular a <b>horizontal</b> para ver mejor la presentación 🌹
+</div>
   <div class="reveal">
     <div class="slides">
 
@@ -637,5 +659,20 @@
       }
     });
   </script>
+  <script>
+  function checkOrientation() {
+    const rotateMsg = document.getElementById("rotate-message");
+    if (window.innerHeight > window.innerWidth) {
+      // Vertical
+      rotateMsg.style.display = "flex";
+    } else {
+      // Horizontal
+      rotateMsg.style.display = "none";
+    }
+  }
+
+  window.addEventListener("resize", checkOrientation);
+  window.addEventListener("load", checkOrientation);
+</script>
 </body>
 </html>
